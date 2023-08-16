@@ -31,7 +31,7 @@ function RoutePath() {
         </Route>
 
         <Route element={<Layout2/>}>
-          <Route path="/cart" element={<Cart />} />
+        <Route path='/cart' element={<CartRoute element={<Cart />} />} />
         </Route>
 
         <Route path="/sign-up" element={<SignUp/>} />

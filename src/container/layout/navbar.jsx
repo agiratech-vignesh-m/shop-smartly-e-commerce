@@ -51,12 +51,12 @@ function Navbar() {
             sx={{
               my: 2,
               mr: '1.5rem',
-              color: '#70CCCC', // Changed color to #70CCCC
+              color: '#70CCCC',
               display: 'block',
               fontSize: '1rem',
-              fontWeight: 'bold', // Increased font size
+              fontWeight: 'bold',
               '&:hover': {
-                textDecoration: 'underline', // Underline on hover
+                textDecoration: 'underline',
               },
             }}
           >
@@ -65,12 +65,12 @@ function Navbar() {
           <Button onClick={() => console.log('Best sellers Clicked')} sx={{
             my: 2,
             mr: '1.5rem',
-            color: '#70CCCC', // Changed color to #70CCCC
+            color: '#70CCCC',
             display: 'block',
             fontSize: '1rem',
-            fontWeight: 'bold', // Increased font size
+            fontWeight: 'bold',
             '&:hover': {
-              textDecoration: 'underline', // Underline on hover
+              textDecoration: 'underline',
             },
           }}>
             Best sellers
@@ -78,12 +78,12 @@ function Navbar() {
           <Button onClick={() => console.log('New Releases')} sx={{
             my: 2,
             mr: '1.5rem',
-            color: '#70CCCC', // Changed color to #70CCCC
+            color: '#70CCCC', 
             display: 'block',
             fontSize: '1rem',
-            fontWeight: 'bold', // Increased font size
+            fontWeight: 'bold',
             '&:hover': {
-              textDecoration: 'underline', // Underline on hover
+              textDecoration: 'underline',
             },
           }}>
             New Releases
@@ -91,12 +91,12 @@ function Navbar() {
           <Button onClick={() => console.log('Gift ideas')} sx={{
             my: 2,
             mr: '1.5rem',
-            color: '#70CCCC', // Changed color to #70CCCC
+            color: '#70CCCC',
             display: 'block',
             fontSize: '1rem',
-            fontWeight: 'bold', // Increased font size
+            fontWeight: 'bold',
             '&:hover': {
-              textDecoration: 'underline', // Underline on hover
+              textDecoration: 'underline',
             },
           }}>
             Gift ideas
@@ -104,12 +104,12 @@ function Navbar() {
           <Button onClick={() => console.log('Customer service')} sx={{
             my: 2,
             // mr: '1.5rem',
-            color: '#70CCCC', // Changed color to #70CCCC
+            color: '#70CCCC',
             display: 'block',
             fontSize: '1rem',
-            fontWeight: 'bold', // Increased font size
+            fontWeight: 'bold',
             '&:hover': {
-              textDecoration: 'underline', // Underline on hover
+              textDecoration: 'underline',
             },
           }}>
             Customer service
@@ -206,12 +206,12 @@ function Navbar() {
               sx={{
                 my: 2,
                 mr: '1rem',
-                color: '#70CCCC', // Changed color to #70CCCC
+                color: '#70CCCC', 
                 display: 'block',
                 fontSize: '1.15rem',
-                fontWeight: 'bold', // Increased font size
+                fontWeight: 'bold', 
                 '&:hover': {
-                  textDecoration: 'underline', // Underline on hover
+                  textDecoration: 'underline',
                 },
               }}>
               Login

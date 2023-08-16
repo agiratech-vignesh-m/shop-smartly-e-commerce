@@ -4,7 +4,7 @@ const initialState = {
   users: [],
   isLoggedIn: false,
   loggedInUser: null,
-  nextUserId: 1,
+  // nextUserId: 1,
 };
 
 const userSlice = createSlice({
@@ -12,9 +12,9 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-      const newUser = { ...action.payload, id: state.nextUserId };
-      state.nextUserId++;
-      state.users.push(newUser);
+      // const newUser = { ...action.payload, id: state.nextUserId };
+      // state.nextUserId++;
+      state.users?.push(action.payload);
     },
     loginSuccess: (state, action) => {
       state.isLoggedIn = true;

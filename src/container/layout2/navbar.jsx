@@ -134,12 +134,12 @@ function Navbar() {
               sx={{
                 my: 2,
                 mr: '1rem',
-                color: '#70CCCC', // Changed color to #70CCCC
+                color: '#70CCCC', 
                 display: 'block',
                 fontSize: '1.15rem',
-                fontWeight: 'bold', // Increased font size
+                fontWeight: 'bold', 
                 '&:hover': {
-                  textDecoration: 'underline', // Underline on hover
+                  textDecoration: 'underline', 
                 },
               }}>
               Login

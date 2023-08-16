@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Box, Typography, Button, Divider, IconButton, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
+import { Box, Typography, Button, IconButton, DialogContent, DialogContentText, Dialog, DialogActions } from '@mui/material';
 import {
   removeItemFromCart,
   increaseQuantity,
@@ -93,6 +93,7 @@ function Cart() {
                   <Box>
                     <img
                       src={item.imgUrl}
+                      alt='images'
                       style={{
                         height: "10vh",
                         width: '100%',

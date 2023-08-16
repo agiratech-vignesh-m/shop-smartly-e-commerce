@@ -16,7 +16,6 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-color.png';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { addUser } from '../../redux/userSlice';
 import { loginSuccess } from '../../redux/userSlice';
 
 const initialState = {
@@ -43,7 +42,7 @@ const formReducer = (state, action) => {
 const Login = () => {
 
   const formData = useSelector((state) => state.user.users);
-  console.log('User Data in Login:', formData);
+  // console.log('User Data in Login:', formData);
   const [formState, formDispatch] = useReducer(formReducer, initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,10 +50,9 @@ const Login = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  // const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
-
-  console.log("formData", formData)
+  // console.log("formData", formData)
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
@@ -75,14 +73,8 @@ const Login = () => {
         const matchingUser = formData.find(user => user.email === validatedData.email);
 
         if (matchingUser && matchingUser.password === validatedData.password) {
-          // Dispatch the loginSuccess action to update the login status
           dispatch(loginSuccess(matchingUser));
-
-          // Handle successful login, e.g., navigate to home page
           navigate('/home',  { replace: true });
-          // if (isLoggedIn) {
-          //   navigate('/home'); // Redirect to dashboard or some other authenticated route
-          // }
 
         } else {
           if (!matchingUser) {
@@ -95,7 +87,7 @@ const Login = () => {
         }
       })
       .catch(validationErrors => {
-        console.log("Login validationErrors", validationErrors)
+        // console.log("Login validationErrors", validationErrors)
         if (validationErrors && validationErrors.inner) {
         const errors = {};
         validationErrors.inner.forEach(error => {
@@ -103,8 +95,6 @@ const Login = () => {
         });
         formDispatch({ type: 'SET_ERRORS', errors });
       }
-
-        // Clear email and password error messages
         setEmailError('');
         setPasswordError('');
       });
@@ -130,6 +120,7 @@ const Login = () => {
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img
           src={logo}
+          alt='logo'
           style={{
             objectFit: 'contain',
             height: '100vh',

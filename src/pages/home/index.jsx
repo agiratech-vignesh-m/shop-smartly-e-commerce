@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Card, Grid, CardActionArea, CardMedia, CardContent, Typography, Button, CardActions, Stack, Divider, styled, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material'
+import { Box, Card, Grid, CardActionArea, CardMedia, CardContent, Typography, Button, CardActions, Divider, styled, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material'
 import cart from '../../assets/online-shopping.png'
 import axios from 'axios';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
@@ -9,29 +9,27 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { loginSuccess } from '../../redux/userSlice';
 import { addItemToCart } from '../../redux/cartSlice';
 
 
 function Home() {
-  const [products, setProducts] = useState([]); // State to hold fetched products
+  const [products, setProducts] = useState([]);
   const [dialogOpen, setDialogOpen] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  console.log("isLoggedIn - Home", isLoggedIn)
+  // console.log("isLoggedIn - Home", isLoggedIn)
 
   // const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   useEffect(() => {
-    // Fetch data from the mock API
     axios.get('https://63bbf047fa38d30d85b54374.mockapi.io/products')
       .then(response => {
-        console.log(response.data)
-        setProducts(response.data); // Set the fetched products in state
+        // console.log(response.data)
+        setProducts(response.data); 
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       });
   }, []);
 
@@ -59,13 +57,9 @@ function Home() {
     setDialogOpen(false);
   };
 
-  const dialogPaperStyle = {
-    backgroundColor: '#cdd2d8',
-  };
-
   const handleAddToCart = (product) => {
     if (isLoggedIn) {
-      console.log("Products:", product)
+      // console.log("Products:", product)
       dispatch(addItemToCart(product));
       alert('Item added to cart!');
     }
@@ -81,6 +75,7 @@ function Home() {
         <Box sx={{ padding: '2rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <img
             src={cart}
+            alt='cart'
             style={{
               height: "30vh",
               width: '50%',
@@ -119,7 +114,7 @@ function Home() {
                 <CardContent sx={{
                   bgcolor: "#001f3f",
                   color: 'white',
-                  // minHeight: '300px', // Set a minimum height for the card content
+                  // minHeight: '300px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between'
@@ -183,7 +178,7 @@ function Home() {
                       },
                     }
                   }}
-                  onClick={() => handleAddToCart(product)} // Pass the product details here
+                  onClick={() => handleAddToCart(product)}
                 >
                   Add to cart
                 </Button>

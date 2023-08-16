@@ -12,7 +12,6 @@ import {
   IconButton,
   Link,
   Dialog,
-  DialogTitle,
   DialogContent,
   DialogContentText,
   DialogActions
@@ -46,8 +45,6 @@ const formReducer = (state, action) => {
       return { ...state, [action.field]: action.value };
     case 'SET_ERRORS':
       return { ...state, formErrors: action.errors };
-    // case 'RESET_FORM':
-    //   return initialState;
     default:
       return state;
   }
@@ -68,7 +65,7 @@ const SignupForm = () => {
   useEffect(() => {
     if (isRegistered) {
       setDialogOpen(true);
-      console.log("setDialogOpen", setDialogOpen)
+      // console.log("setDialogOpen", setDialogOpen)
     }
   }, [isRegistered]);
 
@@ -76,7 +73,7 @@ const SignupForm = () => {
     setDialogOpen(false);
   };
 
-  console.log("formData", formData)
+  // console.log("formData", formData)
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
@@ -97,13 +94,13 @@ const SignupForm = () => {
   });
 
   const handleSubmit = () => {
-    console.log("Check")
+    // console.log("Check")
     validationSchema
       .validate(formState, { abortEarly: false })
       .then(() => {
         // Check if the email is already registered
         const isEmailRegistered = formData && formData.some(user => user.email === formState.email);
-        console.log("isEmailRegistered")
+        // console.log("isEmailRegistered")
         if (isEmailRegistered) {
           const errors = {
             ...formState.formErrors,
@@ -118,16 +115,16 @@ const SignupForm = () => {
             address: formState.address,
             password: formState.password,
           };
-        console.log("userData", userData)
+        // console.log("userData", userData)
 
           dispatch(addUser(userData));
-          console.log('check2')
+          // console.log('check2')
           setIsRegistered(true);
 
         }
       })
       .catch((validationErrors) => {
-        console.log("validationErrors", validationErrors)
+        // console.log("validationErrors", validationErrors)
         if (validationErrors && validationErrors.inner) {
           const errors = {};
           validationErrors.inner.forEach(error => {
@@ -167,6 +164,7 @@ const SignupForm = () => {
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img
           src={logo}
+          alt='logo'
           style={{
             objectFit: 'contain',
             height: '100vh',
