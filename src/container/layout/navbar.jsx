@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Badge, Box, Button, IconButton, ListItemText, Menu, MenuItem, Stack, Toolbar, Typography } from '@mui/material'
+import { AppBar, Avatar, Badge, Box, Button, IconButton, ListItemText, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import logo from '../../assets/logo-no-background.png'
 import NotificationsIcon from '@mui/icons-material/Notifications';
